@@ -1,7 +1,7 @@
  '0.1'
  '
-Copyright 1992-2014 AUTHORS.
-See the legal/LICENSE file for license information and legal/AUTHORS for authors.
+Copyright 2016 AUTHORS.
+See the LICENSE file for license information and AUTHORS for authors.
 '
 ["preFileIn" self] value
 
@@ -12,6 +12,7 @@ See the legal/LICENSE file for license information and legal/AUTHORS for authors
          'ModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          webBuilders = bootstrap define: bootstrap stub -> 'globals' -> 'modules' -> 'webBuilders' -> () ToBe: bootstrap addSlotsTo: (
+             bootstrap remove: 'copyright' From:
              bootstrap remove: 'directory' From:
              bootstrap remove: 'fileInTimeString' From:
              bootstrap remove: 'myComment' From:
@@ -24,10 +25,22 @@ See the legal/LICENSE file for license information and legal/AUTHORS for authors
 
 CopyDowns:
 globals modules init. copy 
-SlotsToOmit: directory fileInTimeString myComment postFileIn revision subpartNames tree.
+SlotsToOmit: copyright directory fileInTimeString myComment postFileIn revision subpartNames tree.
 
 \x7fIsComplete: '.
             | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'modules' -> 'webBuilders' -> () From: ( | {
+         'Category: state\x7fModuleInfo: Module: webBuilders InitialContents: InitializeToExpression: (\'
+Copyright 2016 AUTHORS.
+See the LICENSE file for license information and AUTHORS for authors.
+\')\x7fVisibility: public'
+        
+         copyright <- '
+Copyright 2016 AUTHORS.
+See the LICENSE file for license information and AUTHORS for authors.
+'.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'modules' -> 'webBuilders' -> () From: ( | {

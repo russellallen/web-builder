@@ -147,6 +147,13 @@ See the LICENSE file for license information and AUTHORS for authors.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: main\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         body: blk = ( |
+            | tag: 'body' With: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
          'Category: private\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          buildAttributes: attr = ( |
@@ -184,7 +191,14 @@ See the LICENSE file for license information and AUTHORS for authors.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
-         'Category: special\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+         'Category: doctype\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         docTypeHtml5 = ( |
+            | doctype: 'html').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: doctype\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          doctype: dt = ( |
             | 
@@ -276,6 +290,13 @@ See the LICENSE file for license information and AUTHORS for authors.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: main\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         head: blk = ( |
+            | tag: 'head' With: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
          'Category: common tags\x7fCategory: rules\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          hr = ( |
@@ -287,6 +308,20 @@ See the LICENSE file for license information and AUTHORS for authors.
         
          hr_class: c = ( |
             | tag: 'hr' Attr: 'class' & c).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: main\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         html: blk = ( |
+            | tag: 'html' With: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: lists\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         li: blk = ( |
+            | tag: 'li' With: blk).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
@@ -406,6 +441,13 @@ See the LICENSE file for license information and AUTHORS for authors.
          text: s = ( |
             | 
             add: s value).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: lists\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         ul: blk = ( |
+            | tag: 'ul' With: blk).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> () From: ( | {
