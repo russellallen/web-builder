@@ -111,12 +111,6 @@ See the LICENSE file for license information and AUTHORS for authors.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> () From: ( | {
-         'ModuleInfo: Module: webBuilders InitialContents: InitializeToExpression: (\'\')'
-        
-         contents <- ''.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> () From: ( | {
          'ModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          parent* = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( |
@@ -143,7 +137,8 @@ See the LICENSE file for license information and AUTHORS for authors.
          'Category: private\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          add: s = ( |
-            | contents: contents, s. self).
+            | 
+            rawContents addLast: s. self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
@@ -177,6 +172,22 @@ See the LICENSE file for license information and AUTHORS for authors.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'ModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         contents = ( |
+            | 
+            rawContents asSequence joinUsing: '').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'ModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         copy = ( |
+            | 
+            clone rawContents: rawContents copy).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
          'Category: common tags\x7fCategory: structure\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          div: blk = ( |
@@ -203,6 +214,20 @@ See the LICENSE file for license information and AUTHORS for authors.
          doctype: dt = ( |
             | 
             add: '<!DOCTYPE ', dt, '>').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: special\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         escapeForURL: s = ( |
+             r.
+            | 
+            r: ''.
+            s do: [|:c| 
+              c isDigit || c isLetter 
+                ifTrue: [r: r, c]
+                 False: [r: r, '%', c asByte hexPrintString]].
+            r).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
@@ -315,6 +340,13 @@ See the LICENSE file for license information and AUTHORS for authors.
         
          html: blk = ( |
             | tag: 'html' With: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: images\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         img_src: src = ( |
+            | tag: 'img' Attr: 'src' & src).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
@@ -448,6 +480,12 @@ See the LICENSE file for license information and AUTHORS for authors.
         
          ul: blk = ( |
             | tag: 'ul' With: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> () From: ( | {
+         'ModuleInfo: Module: webBuilders InitialContents: InitializeToExpression: (list copyRemoveAll)'
+        
+         rawContents <- list copyRemoveAll.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> () From: ( | {
