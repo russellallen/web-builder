@@ -149,6 +149,13 @@ See the LICENSE file for license information and AUTHORS for authors.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: paragraphs\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         br = ( |
+            | tag: 'br').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
          'Category: private\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          buildAttributes: attr = ( |
@@ -228,6 +235,28 @@ See the LICENSE file for license information and AUTHORS for authors.
                 ifTrue: [r: r, c]
                  False: [r: r, '%', c asByte hexPrintString]].
             r).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: forms\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         form: blk = ( |
+            | tag: 'form' With: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: forms\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         form_Attr: a With: blk = ( |
+            | tag: 'form' Attr: a With: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: forms\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         form_class: c With: blk = ( |
+            | 
+            tag: 'form' Attr: 'class' & c With: blk).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
@@ -476,6 +505,13 @@ See the LICENSE file for license information and AUTHORS for authors.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
+         'Category: common tags\x7fCategory: forms\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         textInput: n = ( |
+            | tag: 'input' Attr: 'type' & 'text' & 'name' & n).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'html' -> 'parent' -> () From: ( | {
          'Category: common tags\x7fCategory: lists\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
         
          ul: blk = ( |
@@ -486,6 +522,298 @@ See the LICENSE file for license information and AUTHORS for authors.
          'ModuleInfo: Module: webBuilders InitialContents: InitializeToExpression: (list copyRemoveAll)'
         
          rawContents <- list copyRemoveAll.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> () From: ( | {
+         'ModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         htmlPage = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals webBuilders htmlPage.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         + t = ( |
+            | appendTagToContents: t).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         < blk = ( |
+            | doBlockInContents: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         <+ t = ( |
+            | appendTextToContents: t).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         a = ( |
+            | + 'a').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: building\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         addAttributes: l = ( |
+             k.
+             v.
+            | 
+            k: l asSequence copyFilteredBy: [|:v. :k| k even].
+            v: l asSequence copyFilteredBy: [|:v. :k| k odd].
+            k do: [|:eachKey. :i |
+              attributes at: eachKey Put: (v at: i)].
+            self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: building\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         appendTagAfterThis: t = ( |
+            | up appendTagToContents: t. t).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: building\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         appendTagToContents: t = ( |
+             tg.
+            | 
+            tg: copy: t.
+            tg up: self.
+            contents addLast: tg. tg).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: building\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         appendTextToContents: t = ( |
+            | contents addLast: t. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: rendering\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         asString = ( |
+            | 
+            (= root) ifTrue: [^ pageAsString].
+            '<', type, 
+            (attributes isEmpty ifTrue: ''
+                                 False: [| c |
+              c: ''.
+              attributes do: [|:v. :k | c: c, ' ', k, '="', v, '"'].
+              c]),
+            '>', 
+            (contents isEmpty ifTrue: ''
+                               False: [| c |
+              c: ''.
+              contents do: [|:t| c: c, t asString].
+              c: c, '</', type, '>'. c])).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: state\x7fModuleInfo: Module: webBuilders InitialContents: InitializeToExpression: (dictionary copyRemoveAll)'
+        
+         attributes <- dictionary copyRemoveAll.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: structure\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         body = ( |
+            | + 'body').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         br = ( |
+            | + 'br').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: state\x7fModuleInfo: Module: webBuilders InitialContents: InitializeToExpression: (list copyRemoveAll)'
+        
+         contents <- list copyRemoveAll.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: private\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         copy: t = ( |
+             c.
+            | 
+            c: resend.copy.
+            c attributes: attributes copyRemoveAll.
+            c type: t.
+            c contents: contents copyRemoveAll.
+            c).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: page level\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         copyHtml5 = ( |
+             c.
+            | 
+            c: copy: 'page'. c attributes at: 'page' Put: '<!DOCTYPE html>'. c).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: structure\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         div = ( |
+            | + 'div').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: building\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         doBlockInContents: blk = ( |
+            | blk value: self. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: forms\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         form = ( |
+            | + 'form').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: headers\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         h1 = ( |
+            | + 'h1').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: headers\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         h2 = ( |
+            | + 'h2').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: structure\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         head = ( |
+            | + 'head').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         hr = ( |
+            | + 'hr').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: structure\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         html = ( |
+            | + 'html').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         img = ( |
+            | + 'img').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: forms\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         input = ( |
+            | + 'input').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: lists\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         li = ( |
+            | + 'li').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         p = ( |
+            | + 'p').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: rendering\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         pageAsString = ( |
+            | 
+            (root attributes at: 'page'), root contents first asString).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: private\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: navigating\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         root = ( |
+             r.
+            | r: self. [top = r up] whileFalse: [r: r up]. r).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: structure\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         span = ( |
+            | + 'span').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: headers\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         title = ( |
+            | + 'title').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: private\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         top = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> 'top' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals webBuilders htmlPage top.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: state\x7fModuleInfo: Module: webBuilders InitialContents: InitializeToExpression: (\'page\')'
+        
+         type <- 'page'.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: shortcuts\x7fCategory: lists\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         ul = ( |
+            | + 'ul').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> () From: ( | {
+         'Category: state\x7fModuleInfo: Module: webBuilders InitialContents: FollowSlot'
+        
+         up <- bootstrap stub -> 'globals' -> 'webBuilders' -> 'htmlPage' -> 'top' -> ().
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'webBuilders' -> () From: ( | {
